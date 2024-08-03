@@ -9,7 +9,7 @@ require("./database/index")
 
 const app=express()
 app.use(cors({
-    origin: true
+    origin: false
 }))
 app.use(express.json())
 app.use(express.urlencoded({extended: false}))
