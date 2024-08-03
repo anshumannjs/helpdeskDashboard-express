@@ -8,13 +8,14 @@ const User = require("./database/UserSchema")
 require("./database/index")
 
 const app=express()
+app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({extended: false}))
 app.use("/auth", auth)
 app.use("/ticket", ticket)
 
 app.get("/:id", async(req, res)=>{
-    const {id}=req.params
+    const {id}=req.query
     const user=await User.findById(id)
     console.log(user)
     res.send(user).status(200)
