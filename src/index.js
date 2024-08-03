@@ -14,7 +14,7 @@ app.use(express.urlencoded({extended: false}))
 app.use("/auth", auth)
 app.use("/ticket", ticket)
 
-app.get("/:id", async(req, res)=>{
+app.post("/:id", async(req, res)=>{
     const {id}=req.params
     const user=await User.findById(id)
     console.log(user)

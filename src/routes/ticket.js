@@ -14,7 +14,7 @@ router.post("/new", async(req, res)=>{
     }
 })
 
-router.get("/ofUser/:id", async(req, res)=>{
+router.post("/ofUser/:id", async(req, res)=>{
     const {id}=req.params
 
     const ticket=await Ticket.find({creatorId: id})
@@ -26,7 +26,7 @@ router.get("/ofUser/:id", async(req, res)=>{
     }
 })
 
-router.get("/of/:id", async(req, res)=>{
+router.post("/of/:id", async(req, res)=>{
     const {id}=req.params
 
     const ticket=await Ticket.findOne({_id: id})
