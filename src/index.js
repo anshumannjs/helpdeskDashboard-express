@@ -9,7 +9,7 @@ require("./database/index")
 
 const app=express()
 app.use(cors({
-    origin: "https://helpdesk-dash-board-react.vercel.app/"
+    origin: true
 }))
 app.use(express.json())
 app.use(express.urlencoded({extended: false}))
