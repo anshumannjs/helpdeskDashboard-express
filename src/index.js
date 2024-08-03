@@ -15,7 +15,7 @@ app.use("/auth", auth)
 app.use("/ticket", ticket)
 
 app.get("/:id", async(req, res)=>{
-    const {id}=req.query
+    const {id}=req.params
     const user=await User.findById(id)
     console.log(user)
     res.send(user).status(200)
