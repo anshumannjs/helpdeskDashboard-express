@@ -1,6 +1,10 @@
+const dotenv = require('dotenv');
+dotenv.config();
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb://127.0.0.1/helpdesk", {}).then(()=>{
+console.log(process.env.MONGODB_ATLAS_URL)
+
+mongoose.connect(`${process.env.MONGODB_ATLAS_URL}`, {}).then(()=>{
     console.log("connected");
 }).catch((err)=>{
     console.log(err);
